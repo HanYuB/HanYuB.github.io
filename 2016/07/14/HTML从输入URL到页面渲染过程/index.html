@@ -20,7 +20,7 @@
 以谷歌为例，当你输入框里输入’ba’的时候，那么就会根据访问记录，会给一些提示，浏览器会做一些猜测，假设根据你的访问的统计，在输入ba的时候，就会有90%，会访问www.baidu.com，一次在你输入会车前，就回车之前，会先去建立TCP链接，甚至是渲染。
 接着你输入回车，然后浏览器会去检测缓存，然后设置HTT">
 <meta property="og:image" content="http://yoursite.com/image/html_render_icon.png">
-<meta property="og:updated_time" content="2016-07-14T15:24:01.232Z">
+<meta property="og:updated_time" content="2016-07-18T15:34:12.024Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML从输入URL到页面渲染过程">
 <meta name="twitter:description" content="正文从这里开始了
@@ -72,7 +72,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -110,7 +110,7 @@
 <p>接着你输入回车，然后浏览器会去检测缓存，然后设置HTTP信息，接着会调用不同平台的请求方法。</p>
 <p>假设缓存中没有，那么浏览器会对URL进行检查，会判断协议等等之类的工作。然后发出HTTP请求，从应用层(五层协议&lt;应用层、传输层、网络层、数据链路层、物理层&gt;)的角度上看，主要做了两件事1、通过DNS查询IP。2、通过socket发送数据。</p>
 <p>服务器接到数据请求的时候，在真正进入服务器之前，可能会先经过，负载均衡的机器，它的作用是将请求合理的分配到多个服务器上面，同时也具备防攻击（DDOC攻击&lt;通过大量的合法请求占用大量的网络资源，以达到瘫痪网络的目的。例如，两个商店的参与竞争，其中一件商店的老板叫了一大帮人去另外一件商店只观赏，不购物。导致哪一间商店塞满了不购物的人，但是真正购物的又被塞得进不去&gt;）</p>
-<p>服务器返回数据，返回的HTTP传输到浏览器上，如果有gzip压缩，会先进性解压。</p>
+<p>WEB服务器接收到浏览器的HTTP请求后，会检测浏览器是否支持HTTP压缩。<br>支持：<br>WEB服务器会检查请求文件的后缀名，如果请求文件是HTML、CSS、IMG等静态文件，WEB服务器会到压缩缓存目录中检查是否已经存在请求文件，如果存在就直接返回压缩缓存中的文件，如果不存在就返回未压缩的请求文件，并将文件缓存在压缩缓存目录中。<br>如果请求的是动态文件，则WEB服务器将动态文件返回浏览器中，压缩内容不会存放在压缩缓存中（因为是动态，所以每次请求的数据都可能不一样，缓存起来会导致数据显示错误）<br>（总结上述过程是：服务器检测浏览器是否支持HTTP压缩，然后服务器返回数据，返回的HTTP传输到浏览器上，如果有gzip压缩，会先进性解压。）</p>
 <p><img src="/image/html_render_icon.png" alt="http渲染过程图示"></p>
 <p>渲染过程如上图所示，</p>
 <p>1、网页发出http请求，返回html，这时候网页渲染就开始。</p>
@@ -133,13 +133,27 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/14/HTML从输入URL到页面渲染过程/" data-id="ciqmhn9760000a4cb9srlmx3n" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/07/14/HTML从输入URL到页面渲染过程/" data-id="cirksptex0001l8cbg6alxcbf" class="article-share-link">Delen</a>
       
       
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2016/08/07/placeholder在IE下的坑（多图慎入）/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nieuwer</strong>
+      <div class="article-nav-title">
+        
+          placeholder在IE下的坑
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
   
 </article>
 
@@ -157,9 +171,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archieven</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li></ul>
     </div>
   </div>
 
@@ -167,9 +181,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Recente berichten</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/08/07/placeholder在IE下的坑（多图慎入）/">placeholder在IE下的坑</a>
+          </li>
         
           <li>
             <a href="/2016/07/14/HTML从输入URL到页面渲染过程/">HTML从输入URL到页面渲染过程</a>
